@@ -78,5 +78,8 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
+  },
+  "overrides": {
+    "fsevents": "^2.3.2"
   }
 }

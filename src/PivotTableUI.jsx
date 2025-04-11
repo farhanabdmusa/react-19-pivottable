@@ -9,6 +9,17 @@ import Draggable from 'react-draggable';
 /* eslint-disable react/prop-types */
 // eslint can't see inherited propTypes!
 
+const DraggableFilterBox = React.forwardRef(({ style, onClick, children }, ref) => (
+  <div
+    ref={ref}
+    className="pvtFilterBox"
+    style={style}
+    onClick={onClick}
+  >
+    {children}
+  </div>
+));
+
 export class DraggableAttribute extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +60,7 @@ export class DraggableAttribute extends React.Component {
 
     return (
       <Draggable handle=".pvtDragHandle">
-        <div
+        <DraggableFilterBox
           className="pvtFilterBox"
           style={{
             display: 'block',
@@ -129,7 +140,7 @@ export class DraggableAttribute extends React.Component {
               ))}
             </div>
           )}
-        </div>
+        </DraggableFilterBox>
       </Draggable>
     );
   }
